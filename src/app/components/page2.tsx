@@ -6,10 +6,8 @@ import React, { useEffect, useRef, useState, FormEvent } from "react";
 import { Context } from "@/components/Context";
 import Header from "@/components/Header";
 import Chat from "@/components/Chat";
-import Box from "@/components/Elements/Box";
-import DataQueryComponent from "@/components/Elements/DataQueryComponent";
-import DataMarketPlaceComponent from "@/components/Elements/DataMarketPlaceComponent";
 import { useChat } from "ai/react";
+import InstructionModal from "./components/InstructionModal";
 import { AiFillGithub, AiOutlineInfoCircle } from "react-icons/ai";
 
 const Page: React.FC = () => {
@@ -32,7 +30,6 @@ const Page: React.FC = () => {
     setGotMessages(false);
   };
 
-
   useEffect(() => {
     const getContext = async () => {
       const response = await fetch("/api/context", {
@@ -51,13 +48,6 @@ const Page: React.FC = () => {
     prevMessagesLengthRef.current = messages.length;
   }, [messages, gotMessages]);
 
-  const [activeBox, setActiveBox] = useState<null | 'box1' | 'box2'>(null);
-
-  function handleBoxClick(boxId: 'box1' | 'box2') {
-    setActiveBox(activeBox === boxId ? null : boxId); // Toggle or reset
-    console.log('here'+ boxId)
-  }
-
   return (
     <div className="flex flex-col justify-between h-screen bg-gray-800 p-2 mx-auto max-w-full">
       <Header className="my-5" />
@@ -74,12 +64,32 @@ const Page: React.FC = () => {
         <AiFillGithub />
       </button>
 
-      <div className="flex w-full flex-grow overflow-hidden relative justify-center">
- 
-        <Box id="box1" activeBox={activeBox} handleBoxClick={handleBoxClick} href="/build-datasets" />
-        <Box id="box2" activeBox={activeBox} handleBoxClick={handleBoxClick} href="/explore-data-marketplace" />
+      <InstructionModal
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+      />
+      <div className="flex w-full flex-grow overflow-hidden relative">
+        <Chat
+          input={input}
+          handleInputChange={handleInputChange}
+          handleMessageSubmit={handleMessageSubmit}
+          messages={messages}
+        />
+        <div className="absolute transform translate-x-full transition-transform duration-500 ease-in-out right-0 w-2/3 h-full bg-gray-700 overflow-y-auto lg:static lg:translate-x-0 lg:w-2/5 lg:mx-2 rounded-lg">
+          <Context className="" selected={context} />
+        </div>
+        <button
+          type="button"
+          className="absolute left-20 transform -translate-x-12 bg-gray-800 text-white rounded-l py-2 px-4 lg:hidden"
+          onClick={(e) => {
+            e.currentTarget.parentElement
+              ?.querySelector(".transform")
+              ?.classList.toggle("translate-x-full");
+          }}
+        >
+          ☰
+        </button>
       </div>
-
     </div>
   );
 };
