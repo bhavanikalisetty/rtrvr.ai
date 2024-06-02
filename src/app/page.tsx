@@ -59,7 +59,7 @@ const Page: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col justify-between h-screen bg-gray-800 p-2 mx-auto max-w-full">
+    <div className="flex flex-col justify-between h-screen bg-gray-800 p-2 mx-auto w-screen">
       <Header className="my-5" />
 
       <button
@@ -74,9 +74,8 @@ const Page: React.FC = () => {
         <AiFillGithub />
       </button>
 
-      <div className="flex w-full flex-grow overflow-hidden relative justify-center">
- 
-        <Box id="box1" activeBox={activeBox} handleBoxClick={handleBoxClick} href="/build-datasets" />
+      <div className="flex w-1/2 flex-grow overflow-hidden relative flex-col md:flex-row justify-center mx-auto gap-4">
+        <Box id="box1" activeBox={activeBox} handleBoxClick={handleBoxClick} href="/build-datasets" className="mb-4 md:mb-0" />
         <Box id="box2" activeBox={activeBox} handleBoxClick={handleBoxClick} href="/explore-data-marketplace" />
       </div>
 

@@ -8,13 +8,14 @@ import DataMarketPlaceComponent from "./Elements/DataMarketPlaceComponent";
 
 export default function Header({ className }: { className?: string }) {
   const [activeComponent, setActiveComponent] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
-      <header
-        className={`flex items-center justify-between text-gray-200 text-2xl ${className}`}
-      >
-         <Link href="/">
+    <header
+      className={`flex items-center justify-between text-gray-200 text-2xl ${className}`}
+    >
+      <div className="flex items-center">
+        <Link href="/">
           <Image
             src={RtrvrAILogo}
             alt="rtrvrai-logo"
@@ -24,7 +25,26 @@ export default function Header({ className }: { className?: string }) {
             onClick={() => setActiveComponent(null)}
           />
         </Link>
-        <nav className="flex space-x-4 pr-4">
+        <button
+          className="lg:hidden text-2xl focus:outline-none ml-4"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? "✕" : "☰"}
+        </button>
+      </div>
+      <nav className="hidden lg:flex space-x-4 pr-4">
+        <Link legacyBehavior href="/about">
+          <a className="hover:text-white text-lg">About</a>
+        </Link>
+        <Link legacyBehavior href="/build-datasets">
+          <a className="hover:text-white text-lg">Build Datasets</a>
+        </Link>
+        <Link legacyBehavior href="/explore-data-marketplace">
+          <a className="hover:text-white text-lg">Explore Data Marketplace</a>
+        </Link>
+      </nav>
+      {isMenuOpen && (
+        <nav className="lg:hidden flex flex-col space-y-4 absolute top-16 left-0 w-full bg-gray-800 p-4">
           <Link legacyBehavior href="/about">
             <a className="hover:text-white text-lg">About</a>
           </Link>
@@ -35,10 +55,7 @@ export default function Header({ className }: { className?: string }) {
             <a className="hover:text-white text-lg">Explore Data Marketplace</a>
           </Link>
         </nav>
-      </header>
-      {/* {activeComponent === "about" && <About />}
-      {activeComponent === "build-datasets" && <DataQueryComponent />}
-      {activeComponent === "explore-data-marketplace" && <DataMarketPlaceComponent />} */}
-    </>
+      )}
+    </header>
   );
 }

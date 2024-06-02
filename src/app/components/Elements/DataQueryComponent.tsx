@@ -19,25 +19,25 @@ const DataQueryComponent = () => {
   };
 
   return (
-    <div id="DataQueryComponent" className="flex flex-col justify-center h-screen w-full  mr-4 mx-5 lg:mx-0">
-      <div className="flex flex-col flex-grow overflow-y-auto max-h-[calc(100vh-300px)]">
+    <div id="DataQueryComponent" className="flex flex-col justify-center h-screen w-screen">
+      <div className="flex flex-col flex-grow overflow-y-auto max-h-[calc(100vh-300px)] px-4">
         {messages.map((message, index) => (
-          <div key={index} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+          <div key={index} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'} mb-5`}>
             <div
                 className={`${
                     message.sender === "user" ? "bg-blue-500" : "bg-gray-500"
-                } text-white px-4 py-2 rounded-lg mb-2`}
+                } text-white px-4 py-2 rounded-lg mb-2 `}
                 dangerouslySetInnerHTML={{ __html: message.text }}
             />
 
           </div>
         ))}
       </div>
-      <form onSubmit={handleSubmit} className="flex flex-col items-center mt-8">
+      <form onSubmit={handleSubmit} className="flex flex-col items-center mt-8 px-4">
         <label htmlFor="query" className="text-white text-xl mb-4">
           What data are you looking for?
         </label>
-        <div className="relative flex flex-col w-full lg:w-3/5 mr-4 mx-5 lg:mx-0">
+        <div className="relative flex flex-col w-full max-w-md">
             <input
                 type="text"
                 id="query"
