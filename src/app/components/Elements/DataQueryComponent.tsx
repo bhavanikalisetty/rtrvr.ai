@@ -7,7 +7,7 @@ const DataQueryComponent = () => {
   const [query, setQuery] = useState('');
   const [messages, setMessages] = useState(inputData);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log('herebefore', messages)
     setMessages(prevMessages => [...prevMessages, { text: 'from user' + query, sender: 'user' }]);  

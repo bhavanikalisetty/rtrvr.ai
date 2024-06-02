@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Form from "./Form";
 
 const DataMarketPlaceComponent = () => {
-  const [selectedButton, setSelectedButton] = useState(null);
+  const [selectedButton, setSelectedButton] = useState<string | null>(null);
 
-  const handleButtonClick = (buttonId) => {
+  const handleButtonClick = (buttonId: string) => {
     setSelectedButton(buttonId);
   };
 

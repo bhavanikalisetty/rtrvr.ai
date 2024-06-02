@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 
-const Form = ({ buttonId }) => {
+type FormProps = {
+  buttonId: string;
+};
+
+const Form: React.FC<FormProps> = ({ buttonId }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(name + " , " + email)
     // Do something with the form data, such as send it to a server or update a state variable
