@@ -3,6 +3,9 @@ import inputData from './InputData';
 import Image from "next/image";
 import DAGVector from "../../../public/dag_vector.svg";
 import FinancialReportComponent from "./FinancialReportComponent"
+import FinancialGraphComponent from "./FinancialGraphComponent"
+import MunicipalitiesTable from "./MunicipalitiesTable"
+import ACFRTable from "./ACFRTable"
 
 const DataQueryComponent = () => {
   const [query, setQuery] = useState('');
@@ -22,25 +25,31 @@ const DataQueryComponent = () => {
     // Function to identify and format special elements
     const renderMessageContent = (message: {text:string, sender: string}) => {
         const text = message.text
-        const hasImage = text.includes('<Image');
-        const hasChart = text.includes('<Chart>'); // Add detection for your custom chart component
-        const hasTable = text.includes('<Table>'); // Add detection for your custom table component
+        const hasMunicipalitiesTable = text.includes("<MunicipalitiesTable");
+        const hasACFRTable = text.includes("<ACFRTable");
+        const hasImage = text.includes("<Image");
+        const hasGraph= text.startsWith("####### Graphs #######"); // Add detection for graphs
+        const hasTable = text.includes("<Table>"); // Add detection for your custom table component
         const hasFinancialReport = text.startsWith("####### Report #######"); // Add detection for the report
-        const hasOtherHtml = /<[a-z][\s\S]*>/i.test(text) && !hasImage && !hasChart && !hasTable && !hasFinancialReport;
+        const hasOtherHtml = /<[a-z][\s\S]*>/i.test(text) && !hasMunicipalitiesTable && !hasACFRTable && !hasImage && !hasGraph && !hasTable && !hasFinancialReport;
     
-        if (hasImage) {
+        if (hasMunicipalitiesTable) {
+            return <MunicipalitiesTable />;
+        } else if (hasACFRTable) {
+            return <ACFRTable />;
+        } else if (hasImage) {
           return (
             <div className="my-4">
               <div dangerouslySetInnerHTML={{ __html: text }} /> 
             </div>
           );
-        } else if (hasChart) {
-          return (
-            <div className="my-4 border rounded-md p-4 bg-white">
-              {/* Render your Chart component here, passing data as needed */}
-              <div dangerouslySetInnerHTML={{ __html: text }} />
-            </div>
-          );
+        } else if (hasGraph) {
+             // Extract graph data
+            const graphDataString = text.split("####### Graphs #######")[1].trim();
+            // Parse graph data
+            const data = JSON.parse(graphDataString);
+            // return Financial Graph Component
+            return <FinancialGraphComponent data={data}/>;
         } else if (hasTable) {
           return (
             <div className="my-4 overflow-x-auto">

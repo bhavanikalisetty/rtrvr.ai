@@ -19,9 +19,12 @@ const inputData = [
             />`,
         sender: 'assistant'
     },
-   
     {
-        text: 'Step1: Google Search: Find municipalities in california. Export to Sheets',
+        text: 'Step1: Google Search: Find municipalities in california.',
+        sender: 'assistant'
+    },
+    {
+        text: `<MunicipalitiesTable />`,
         sender: 'assistant'
     },
     {
@@ -33,9 +36,66 @@ const inputData = [
         sender: 'assistant'
     },
     {
-        text: 'Step4: LLM Content Generation: Here\'s the final list of all 2023 audits for every municipality in california. Export to Sheets. Anything more?',
+        text: 'Step4: LLM Content Generation: Here\'s the final list of all 2023 audits for every municipality in california',
         sender: 'assistant'
     },
+    {
+        text: `<ACFRTable />`,
+        sender: 'assistant'
+    },
+    // {
+    //     text: 'Extract Artesia municipality\'s data from the audit.',
+    //     sender: 'user'
+    // },
+    // {
+    //     text: 'Here is the Artesia municipality\'s data:',
+    //     sender: 'assistant'
+    // },
+    // {
+    //     text: `artesia_municipality_audit =[
+    //         {
+    //           "Fiscal Year": 2022,
+    //           "Net Position": 37746548,
+    //           "Net Position Change": 6158549,
+    //           "Total Revenues": 20494101,
+    //           "Total Expenditures": 14118827,
+    //           "Unassigned Fund Balance": 4963307,
+    //           "Capital Assets": 28113887,
+    //           "Long Term Liabilities": 9064322,
+    //           "Total Debt Outstanding": 9064322,
+    //           "Revenue Capacity": {
+    //             "Governmental Activities Tax Revenues by Source": {
+    //               "Property Taxes": 2146321,
+    //               "Transient Occupancy Taxes": 410567,
+    //               "Sales Taxes": 5551693,
+    //               "Franchise Taxes": 909908,
+    //               "Business License Taxes": 525901
+    //             },
+    //             "Assessed Value of Taxable Property": 96,
+    //             "Assessed Value of Taxable Property by Use": {
+    //               "Residential": 60,
+    //               "Commercial": 30,
+    //               "Industrial": 6
+    //             },
+    //             "Direct and Overlapping Property Tax Rates": 1.05,
+    //             "Principal Property Taxpayers": [
+    //               "John Doe",
+    //               "Jane Smith"
+    //             ]
+    //           },
+    //           "Debt Capacity": {
+    //             "Ratios of Outstanding Debt by Type": {
+    //               "General Obligation Debt": 0.6,
+    //               "Revenue Debt": 0.4
+    //             },
+    //             "Ratios of General Bonded Debt Outstanding": 0.7,
+    //             "Direct and Overlapping Bonded Debt": 1.2,
+    //             "Legal Debt Margin": 0.3
+    //           }
+    //         }
+    //       ]`,
+    //     sender: 'assistant'
+    // },
     {
         text: 'Give me a report on Artesia municipality\'s performance based on the data highlighted in the audit.',
         sender: 'user'
@@ -63,7 +123,48 @@ const inputData = [
         sender: 'user'
     },
     {
-        text: `Here is the Graph of Artesia Municipality's Performance: Graph`,
+        text: `####### Graphs #######[
+            {
+              "Fiscal Year": 2022,
+              "Net Position": 37746548,
+              "Net Position Change": 6158549,
+              "Total Revenues": 20494101,
+              "Total Expenditures": 14118827,
+              "Unassigned Fund Balance": 4963307,
+              "Capital Assets": 28113887,
+              "Long Term Liabilities": 9064322,
+              "Total Debt Outstanding": 9064322,
+              "Revenue Capacity": {
+                "Governmental Activities Tax Revenues by Source": {
+                  "Property Taxes": 2146321,
+                  "Transient Occupancy Taxes": 410567,
+                  "Sales Taxes": 5551693,
+                  "Franchise Taxes": 909908,
+                  "Business License Taxes": 525901
+                },
+                "Assessed Value of Taxable Property": 96,
+                "Assessed Value of Taxable Property by Use": {
+                  "Residential": 60,
+                  "Commercial": 30,
+                  "Industrial": 6
+                },
+                "Direct and Overlapping Property Tax Rates": 1.05,
+                "Principal Property Taxpayers": [
+                  "John Doe",
+                  "Jane Smith"
+                ]
+              },
+              "Debt Capacity": {
+                "Ratios of Outstanding Debt by Type": {
+                  "General Obligation Debt": 0.6,
+                  "Revenue Debt": 0.4
+                },
+                "Ratios of General Bonded Debt Outstanding": 0.7,
+                "Direct and Overlapping Bonded Debt": 1.2,
+                "Legal Debt Margin": 0.3
+              }
+            }
+          ]`,
         sender: 'assistant'
     }
 ];
