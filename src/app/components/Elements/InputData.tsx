@@ -6,30 +6,34 @@ const inputData = [
         sender: 'user'
     },
     {
-        text: `Sure! Here are the steps I\'m gonna execute in a DAG: Data Extraction > LLM Data Ingestion > LLM Content Generation.
-        <Image
-            src="/dag.png"
-            alt="llm-dag"
-            width="230"
-            height="200"
-            className="ml-3 cursor-pointer"
-          />`,
+        text: `Sure! Here are the steps that will be gonna executed in a DAG`,
         sender: 'assistant'
     },
+    {
+        text: `<Image
+                src="./dag_transparent.png"
+                alt="llm-dag"
+                width="700"
+                height="400"
+                className="ml-3 cursor-pointer"
+            />`,
+        sender: 'assistant'
+    },
+   
     {
         text: 'Step1: Google Search: Find municipalities in california. Export to Sheets',
         sender: 'assistant'
     },
     {
-        text: 'Step2: LLM DeepSearch: Get 2023 audit for each municipality',
+        text: 'Step2: LLM Deep Search: Get 2023 audit for each municipality',
         sender: 'assistant'
     },
     {
-        text: 'Step3: LLM AgentInteraction: Extract/Download audit pdf for each municipality',
+        text: 'Step3: LLM Agent Interaction: Download audit pdf for each municipality',
         sender: 'assistant'
     },
     {
-        text: 'Step4: LLM ContentGeneration: Here\'s the final list of all 2023 audits for every municipality in california. Export to Sheets. Anything more?',
+        text: 'Step4: LLM Content Generation: Here\'s the final list of all 2023 audits for every municipality in california. Export to Sheets. Anything more?',
         sender: 'assistant'
     },
     {
@@ -37,17 +41,21 @@ const inputData = [
         sender: 'user'
     },
     {
-        text: `Based on the provided dataset, here's a report on Artesia municipality's performance for the fiscal year 2022:
-
-        1. **Financial Overview**: The municipality's net position stood at $37,746,548, marking an increase of $6,158,549 from the previous period. The total revenues were $20,494,101, while total expenditures amounted to $14,118,827. This leaves an unassigned fund balance of $4,963,307.
+        text: `####### Report #######
+        Based on the provided dataset, here's a report on Artesia municipality's performance for the fiscal year 2022:
         
-        2. **Asset and Liabilities**: The capital assets of the municipality were valued at $28,113,887. However, there were long-term liabilities worth $9,064,322, which also represents the total debt outstanding.
+        1. **Financial Overview**: The Net Position of Artesia municipality in 2022 was $37,746,548, which is an increase of $6,158,549 from the previous year. The total revenues generated were $20,494,101, while the total expenditures were $14,118,827. This indicates a positive financial performance as revenues exceed expenditures.
         
-        3. **Revenue Capacity**: The majority of the governmental activities tax revenues came from sales taxes ($5,551,693). Property taxes contributed $2,146,321, while franchise taxes and business license taxes contributed $909,908 and $525,901 respectively. Transient occupancy taxes brought in $410,567. The total assessed value of taxable property was 96, with residential properties making up 60% of this value, commercial properties 30%, and industrial properties 6%. The direct and overlapping property tax rate was 1.05. The principal property taxpayers were identified as John Doe and Jane Smith.
+        2. **Fund Balance**: The Unassigned Fund Balance was $4,963,307. This balance represents the portion of the entity's net position that is available for spending at the discretion of the governing body.
         
-        4. **Debt Capacity**: The ratios of outstanding debt by type showed that general obligation debt accounted for 60% of the total debt, while revenue debt made up the remaining 40%. The ratios of general bonded debt outstanding was 0.7. The direct and overlapping bonded debt was 1.2, and the legal debt margin was 0.3.
+        3. **Capital Assets and Liabilities**: The municipality's Capital Assets were valued at $28,113,887, while the Long-Term Liabilities were $9,064,322. The Total Debt Outstanding was also $9,064,322, indicating that the municipality's long-term liabilities are entirely composed of debt.
         
-        This report suggests that Artesia municipality has seen an increase in its net position and has more revenues than expenditures. However, it also has significant long-term liabilities. The majority of the tax revenues are derived from sales taxes, and residential properties make up the majority of the taxable property value. The debt is primarily made up of general obligation debt.`,
+        4. **Revenue Capacity**: The primary sources of tax revenues were Sales Taxes ($5,551,693), Property Taxes ($2,146,321), and Franchise Taxes ($909,908). The Assessed Value of Taxable Property was 96, with Residential (60), Commercial (30), and Industrial (6) being the primary uses. The Direct and Overlapping Property Tax Rates was 1.05. The principal property taxpayers were John Doe and Jane Smith.
+        
+        5. **Debt Capacity**: The Ratios of Outstanding Debt by Type were 0.6 for General Obligation Debt and 0.4 for Revenue Debt. The Ratios of General Bonded Debt Outstanding was 0.7. The Direct and Overlapping Bonded Debt was 1.2, and the Legal Debt Margin was 0.3.
+        
+        In conclusion, Artesia municipality seems to have a healthy financial position with increasing net position and revenues exceeding expenditures. However, a significant portion of the capital assets is offset by long-term liabilities, indicating a need for careful debt management. The revenue capacity is strong, with a diverse range of tax sources, and the debt capacity ratios suggest a balanced approach to debt financing.
+        `,
         sender: 'assistant'
     },
     {
@@ -56,7 +64,7 @@ const inputData = [
     },
     {
         text: `Here is the Graph of Artesia Municipality's Performance: Graph`,
-        sender: 'user'
+        sender: 'assistant'
     }
 ];
 export default inputData;

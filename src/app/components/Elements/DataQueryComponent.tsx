@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import inputData from './InputData';
 import Image from "next/image";
-import RtrvrAILogo from "../../../public/rtrvrai.svg";
+import DAGVector from "../../../public/dag_vector.svg";
+import FinancialReportComponent from "./FinancialReportComponent"
 
 const DataQueryComponent = () => {
   const [query, setQuery] = useState('');
@@ -18,17 +19,66 @@ const DataQueryComponent = () => {
     // Send the query to the server and update the messages state with the response
   };
 
+    // Function to identify and format special elements
+    const renderMessageContent = (message: {text:string, sender: string}) => {
+        const text = message.text
+        const hasImage = text.includes('<Image');
+        const hasChart = text.includes('<Chart>'); // Add detection for your custom chart component
+        const hasTable = text.includes('<Table>'); // Add detection for your custom table component
+        const hasFinancialReport = text.startsWith("####### Report #######"); // Add detection for the report
+        const hasOtherHtml = /<[a-z][\s\S]*>/i.test(text) && !hasImage && !hasChart && !hasTable && !hasFinancialReport;
+    
+        if (hasImage) {
+          return (
+            <div className="my-4">
+              <div dangerouslySetInnerHTML={{ __html: text }} /> 
+            </div>
+          );
+        } else if (hasChart) {
+          return (
+            <div className="my-4 border rounded-md p-4 bg-white">
+              {/* Render your Chart component here, passing data as needed */}
+              <div dangerouslySetInnerHTML={{ __html: text }} />
+            </div>
+          );
+        } else if (hasTable) {
+          return (
+            <div className="my-4 overflow-x-auto">
+              <div dangerouslySetInnerHTML={{ __html: text }} /> 
+            </div>
+          );
+        } else if (hasOtherHtml){
+          return (
+            <div className="my-4 text-black">
+              <div dangerouslySetInnerHTML={{ __html: text }} />
+            </div>
+          )
+        } else if (hasFinancialReport) {
+            return <FinancialReportComponent reportText={text} />;
+          } else {
+          return (
+            <div
+              className={`${
+                message.sender === "user" ? "bg-blue-500" : "bg-gray-500"
+              } text-white px-4 py-2 rounded-lg mb-2 `}
+              dangerouslySetInnerHTML={{ __html: text }}
+            />
+          );
+        }
+      };
+
   return (
     <div id="DataQueryComponent" className="flex flex-col justify-center h-screen w-screen">
       <div className="flex flex-col flex-grow overflow-y-auto max-h-[calc(100vh-300px)] px-4">
         {messages.map((message, index) => (
           <div key={index} className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'} mb-5`}>
-            <div
+            {renderMessageContent(message)}
+            {/* <div
                 className={`${
                     message.sender === "user" ? "bg-blue-500" : "bg-gray-500"
                 } text-white px-4 py-2 rounded-lg mb-2 `}
                 dangerouslySetInnerHTML={{ __html: message.text }}
-            />
+            /> */}
 
           </div>
         ))}
