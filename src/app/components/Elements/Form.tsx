@@ -11,7 +11,6 @@ const Form: React.FC<FormProps> = ({ buttonId }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(name + " , " + email)
     // Do something with the form data, such as send it to a server or update a state variable
     setName('');
     setEmail('');

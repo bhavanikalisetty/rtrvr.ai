@@ -55,7 +55,6 @@ const Page: React.FC = () => {
 
   function handleBoxClick(boxId: 'box1' | 'box2') {
     setActiveBox(activeBox === boxId ? null : boxId); // Toggle or reset
-    console.log('here'+ boxId)
   }
 
   return (
