@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import inputData from './InputData';
-import Image from "next/image";
-import DAGVector from "../../../public/dag_vector.svg";
 import FinancialReportComponent from "./FinancialReportComponent"
 import FinancialGraphComponent from "./FinancialGraphComponent"
 import MunicipalitiesTable from "./MunicipalitiesTable"

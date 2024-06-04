@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="flex flex-col items-center justify-center h-screen text-gray-200 text-lg">
       <p className="mb-4">
-        rtrvr.ai was started with a vision to ...
+        rtrvr.ai was started with a vision to build a data exchange platform for structured data connecting data source providers and consumers efficiently. <br/> To faciliate customers with effective data generation and analysis we are building a LLM Deep Search enabled workflow engine. 
       </p>
       <p className="mb-4">
         Contact details:

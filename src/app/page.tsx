@@ -3,14 +3,10 @@
 "use client";
 
 import React, { useEffect, useRef, useState, FormEvent } from "react";
-import { Context } from "@/components/Context";
 import Header from "@/components/Header";
-import Chat from "@/components/Chat";
 import Box from "@/components/Elements/Box";
-import DataQueryComponent from "@/components/Elements/DataQueryComponent";
-import DataMarketPlaceComponent from "@/components/Elements/DataMarketPlaceComponent";
 import { useChat } from "ai/react";
-import { AiFillGithub, AiOutlineInfoCircle } from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
 
 const Page: React.FC = () => {
   const [gotMessages, setGotMessages] = useState(false);
