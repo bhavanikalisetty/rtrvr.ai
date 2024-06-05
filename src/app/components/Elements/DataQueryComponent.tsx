@@ -11,10 +11,9 @@ const DataQueryComponent = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setMessages(prevMessages => [...prevMessages, { text: 'from user' + query, sender: 'user' }]);  
+    setMessages(prevMessages => [...prevMessages, { text: query, sender: 'user' }]);  
     setQuery('');
-    setMessages(prevMessages => [...prevMessages, { text: 'from assistant' + query, sender: 'assistant' }]);
-
+    setMessages(prevMessages => [...prevMessages, { text: 'Feature to live interact with the Agent will be available soon!', sender: 'assistant' }]);
     // Send the query to the server and update the messages state with the response
   };
 

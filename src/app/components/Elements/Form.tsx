@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from 'react';
+import { kv } from "@vercel/kv";
 
 type FormProps = {
   buttonId: string;
@@ -9,9 +12,14 @@ const Form: React.FC<FormProps> = ({ buttonId }) => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Do something with the form data, such as send it to a server or update a state variable
+    const value = {
+      Name: name,
+      Email: email,
+      Source: buttonId
+    };
+    await kv.set(name+email+buttonId, value);
     setName('');
     setEmail('');
     setSubmitted(true);
