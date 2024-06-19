@@ -18,7 +18,7 @@ export default function Header({ className }: { className?: string }) {
         <Link href="/">
           <Image
             src={RtrvrAILogo}
-            alt="rtrvrai-logo"
+            alt="rtrvr.ai"
             width="230"
             height="50"
             className="ml-3 cursor-pointer"
