@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Head from 'next/head';
 import Image from "next/image";
 import Link from "next/link";
 import RtrvrAILogo from "../../../public/rtrvrai.svg";
@@ -11,7 +12,12 @@ export default function Header({ className }: { className?: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header
+    <>
+      <Head>
+        <title>rtrvr.ai</title>
+      </Head>
+
+      <header
       className={`relative flex items-center justify-between text-gray-200 text-2xl ${className}`}
     >
       <div className="flex items-center">
@@ -57,5 +63,6 @@ export default function Header({ className }: { className?: string }) {
         </nav>
       )}
     </header>
+    </>
   );
 }

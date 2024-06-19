@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Rtrvr.ai",
-  description: "Rtrvr.ai Website",
+  title: "rtrvr.ai",
+  description: "rtrvr.ai Website",
 };
 
 import "../global.css";
