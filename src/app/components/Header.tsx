@@ -39,26 +39,26 @@ export default function Header({ className }: { className?: string }) {
         </button>
       </div>
       <nav className="hidden lg:flex space-x-4 pr-4">
-        <Link legacyBehavior href="/about">
-          <a className="hover:text-white text-lg">About</a>
+        <Link href="/about" className="hover:text-white text-lg">
+          About
         </Link>
-        <Link legacyBehavior href="/build-datasets">
-          <a className="hover:text-white text-lg">Build Datasets</a>
+        <Link href="/build-datasets" className="hover:text-white text-lg">
+          Build Datasets
         </Link>
-        <Link legacyBehavior href="/explore-data-marketplace">
-          <a className="hover:text-white text-lg">Explore Data Marketplace</a>
+        <Link href="/explore-data-marketplace" className="hover:text-white text-lg">
+          Explore Data Marketplace
         </Link>
       </nav>
       {isMenuOpen && (
         <nav className="lg:hidden flex flex-col space-y-4 absolute top-full left-0 z-10 w-full bg-gray-800 p-4">
-          <Link legacyBehavior href="/about">
-            <a className="hover:text-white text-lg block">About</a>
+          <Link href="/about" className="hover:text-white text-lg block">
+            About
           </Link>
-          <Link legacyBehavior href="/build-datasets">
-            <a className="hover:text-white text-lg block">Build Datasets</a>
+          <Link href="/build-datasets" className="hover:text-white text-lg block">
+            Build Datasets
           </Link>
-          <Link legacyBehavior href="/explore-data-marketplace">
-            <a className="hover:text-white text-lg block">Explore Data Marketplace</a>
+          <Link href="/explore-data-marketplace" className="hover:text-white text-lg block">
+            Explore Data Marketplace
           </Link>
         </nav>
       )}

@@ -114,4 +114,3 @@ const DataQueryComponent = () => {
 };
 
 export default DataQueryComponent;
-

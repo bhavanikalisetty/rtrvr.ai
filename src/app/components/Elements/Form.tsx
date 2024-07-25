@@ -26,7 +26,7 @@ const Form: React.FC<FormProps> = ({ buttonId }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col items-center mt-8">
+    <form onSubmit={handleSubmit} className="flex flex-col items-center mt-8 min-h-screen">
       {submitted ? (
         <p className="text-white text-lg mb-4">Thank you! We will contact you soon!</p>
       ) : (

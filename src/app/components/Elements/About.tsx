@@ -1,24 +1,65 @@
 import { FaEnvelope, FaLinkedin } from "react-icons/fa";
+import './About.css';
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-gray-200 text-lg">
-      <p className="mb-4">
-        rtrvr.ai was started with a vision to build a data exchange platform for structured data connecting data source providers and consumers efficiently. <br/> To faciliate customers with effective data generation and analysis we are building a LLM Deep Search enabled workflow engine. 
-      </p>
-      <p className="mb-4">
-        Contact details:
-      </p>
-      <p className="mb-4">
-        Arjun Chintapalli
-      </p>
-      <div className="flex space-x-4">
-        <a href="mailto:rjchint@gmail.com" className="hover:text-white">
-          <FaEnvelope size={24} />
-        </a>
-        <a href="https://www.linkedin.com/in/arjun-chintapalli/" className="hover:text-white" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin size={24} />
-        </a>
+    <div className="about-container px-4 py-8 mx-auto max-w-screen-lg h-screen">
+      <div className="header-container">
+        <h3 className="text-xl font-semibold mb-4 text-white">
+          Meet the Team
+        </h3>
+      </div>
+
+      <div className="team-grid">
+        {/* Arjun Chintapalli */}
+        <div className="team-member">
+          <img 
+            src="arjun.png" 
+            alt="Arjun Chintapalli"
+            className="team-img" 
+          />
+          <div className="team-info">
+            <h4 className="text-lg font-medium text-white">Arjun Chintapalli</h4>
+            <div className="team-contact"> 
+              <a href="mailto:rjchint@gmail.com" className="hover:text-white">
+                <FaEnvelope size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/arjun-chintapalli/"
+                className="hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Bhavani Kalisetty */}
+        <div className="team-member">
+          <img 
+            src="bhavani.png" 
+            alt="Bhavani Kalisetty"
+            className="team-img" 
+          />
+          <div className="team-info">
+            <h4 className="text-lg font-medium text-white">Bhavani Kalisetty</h4>
+            <div className="team-contact">
+              <a href="mailto:bhavanikalisetty@gmail.com" className="hover:text-white">
+                <FaEnvelope size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/bhavani-kalisetty/"
+                className="hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
