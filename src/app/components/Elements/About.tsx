@@ -1,5 +1,6 @@
 import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 import './About.css';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -13,7 +14,7 @@ export default function About() {
       <div className="team-grid">
         {/* Arjun Chintapalli */}
         <div className="team-member">
-          <img 
+          <Image 
             src="arjun.png" 
             alt="Arjun Chintapalli"
             className="team-img" 
@@ -38,7 +39,7 @@ export default function About() {
 
         {/* Bhavani Kalisetty */}
         <div className="team-member">
-          <img 
+          <Image 
             src="bhavani.png" 
             alt="Bhavani Kalisetty"
             className="team-img" 

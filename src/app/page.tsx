@@ -76,7 +76,7 @@ const Page: React.FC = () => {
       </div> */}
       <div className="about-container px-4 py-8 mx-auto max-w-screen-lg min-h-screen">
       <h2 className="text-2xl font-bold mb-4 text-white">
-        Unlock the Web's Data with Rtrvr.ai
+        Unlock the Web&apos;s Data with Rtrvr.ai
       </h2>
 
       <p className="mb-4 text-gray-300">
@@ -109,7 +109,7 @@ const Page: React.FC = () => {
       </h3>
 
       <p className="mb-4 text-gray-300">
-        Rtrvr.ai's Chrome extension empowers you to effortlessly extract
+        Rtrvr.ai&apos;s Chrome extension empowers you to effortlessly extract
         structured data from websites and integrate it seamlessly into your
         workflows. Whether you need to gather sales leads from LinkedIn,
         extract financial data, or build custom data pipelines, Rtrvr.ai
