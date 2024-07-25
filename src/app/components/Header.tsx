@@ -3,12 +3,8 @@ import Head from 'next/head';
 import Image from "next/image";
 import Link from "next/link";
 import RtrvrAILogo from "../../../public/rtrvrai.svg";
-import About from "./Elements/About";
-import DataQueryComponent from "./Elements/DataQueryComponent";
-import DataMarketPlaceComponent from "./Elements/DataMarketPlaceComponent";
 
 export default function Header({ className }: { className?: string }) {
-  const [activeComponent, setActiveComponent] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -28,7 +24,6 @@ export default function Header({ className }: { className?: string }) {
             width="230"
             height="50"
             className="ml-3 cursor-pointer"
-            onClick={() => setActiveComponent(null)}
           />
         </Link>
         <button
@@ -39,8 +34,8 @@ export default function Header({ className }: { className?: string }) {
         </button>
       </div>
       <nav className="hidden lg:flex space-x-4 pr-4">
-        <Link href="/about" className="hover:text-white text-lg">
-          About
+        <Link href="/team" className="hover:text-white text-lg">
+          Team
         </Link>
         <Link href="/build-datasets" className="hover:text-white text-lg">
           Build Datasets
@@ -51,8 +46,8 @@ export default function Header({ className }: { className?: string }) {
       </nav>
       {isMenuOpen && (
         <nav className="lg:hidden flex flex-col space-y-4 absolute top-full left-0 z-10 w-full bg-gray-800 p-4">
-          <Link href="/about" className="hover:text-white text-lg block">
-            About
+          <Link href="/team" className="hover:text-white text-lg block">
+            Team
           </Link>
           <Link href="/build-datasets" className="hover:text-white text-lg block">
             Build Datasets

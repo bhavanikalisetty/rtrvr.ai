@@ -1,0 +1,12 @@
+/* Team.css */
+.team-member-card { 
+  max-width: 300px; /* Adjust as needed */
+  /* Remove any fixed height property */ 
+}
+.team-grid { /* Or whatever your container's class name is */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically (optional) */
+  flex-wrap: wrap;         /* Allow cards to wrap to next line */
+  gap: 2rem;               /* Adjust gap between cards */
+}
