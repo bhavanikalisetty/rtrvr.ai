@@ -29,7 +29,7 @@ const Form: React.FC<{ isConsumer: boolean }> = ({ isConsumer }) => {
   return (
     <form onSubmit={handleSubmit} className="form">
       {submitted ? (
-        <p>Thank you! We will contact you soon!</p>
+        <p className="text-white text-center">Thank you! We will contact you soon!</p>
       ) : (
         <>
           <h2>{isConsumer ? 'Data Consumer' : 'Data Service Provider'}</h2>
