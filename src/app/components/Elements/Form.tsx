@@ -16,7 +16,6 @@ const Form: React.FC<{ isConsumer: boolean }> = ({ isConsumer }) => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     formData.Source = isConsumer ? 'Data Consumer' : 'Data Service Provider';
-    console.log('here form data', formData);
     await kv.set(`${formData.Name}${formData.Email}${formData.Source}`, formData);
     setFormData({ Name: '', Email: '', Source: '' });
     setSubmitted(true);
