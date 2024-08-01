@@ -62,7 +62,7 @@ const Page: React.FC = () => {
 
       {showSuccessMessage && (
             <div className="bg-white border border-green-400 text-green-700 px-4 py-3 rounded relative mt-2 flex justify-center" role="alert">
-              <p>We'll reach out with next steps shortly.</p>
+              <p>We&apos;ll reach out with next steps shortly.</p>
             </div>
       )}
 

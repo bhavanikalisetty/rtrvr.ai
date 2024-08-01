@@ -17,7 +17,7 @@ const DataMarketPlaceComponent = () => {
     });
   };
 
-  const handleSubmit = async (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (formData && formData.email) {
@@ -47,11 +47,11 @@ const DataMarketPlaceComponent = () => {
   
         <div className="user-engagement-form mt-8">
           <p className="question text-white font-semibold text-xl mb-2">Unlock the Power of Data:</p>
-          <p className="sub-question text-gray-300 mb-4">Tell us how you'd like to engage with our marketplace.</p>
+          <p className="sub-question text-gray-300 mb-4">Tell us how you&apos;d like to engage with our marketplace.</p>
 
           {showSuccessMessage && ( 
             <div className="success-message show" role="alert">
-              <p>Thanks for reaching out! We'll be in touch soon.</p>
+              <p>Thanks for reaching out! We&apos;ll be in touch soon.</p>
             </div>
           )}
   
