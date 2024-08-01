@@ -32,3 +32,12 @@ body {
   height: 0;
   overflow: hidden;
 }
+
+.success-message { 
+  background-color: white;
+  border: 1px solid #4CAF50;
+  color: #388E3C;
+  padding: 8px 12px; /* Adjust padding as needed */
+  border-radius: 4px;
+  text-align: center; /* Center the text */
+}
