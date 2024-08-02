@@ -8,14 +8,14 @@ const Footer: React.FC = () => {
           Copyright © {new Date().getFullYear()} rtrvr.ai Inc. All rights reserved.
         </div>
         <div className="flex space-x-6 mt-4 sm:mt-0">
-          <a href="mailto:hello@rtrvr.ai" className="hover:text-white"> 
-            Email Founders 
-          </a>
           <a href="https://x.com/rtrvrai" target="_blank" rel="noopener noreferrer" className="hover:text-white"> 
             X (fka. Twitter) 
           </a>
-          <a href="https://www.linkedin.com/in/bhavani-kalisetty/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+          <a href="https://www.linkedin.com/company/rtrvr-ai/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
             LinkedIn
+          </a>
+          <a href="mailto:support@rtrvr.ai" className="hover:text-white"> 
+            Support 
           </a>
           {/** Bhavani TO_DO: update terms and privacy later */}
           <a href="/" className="hover:text-white">
