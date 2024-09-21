@@ -1,0 +1,36 @@
+/* PrivacyPolicy.css */
+.privacy-policy-container {
+    @apply max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md;
+  }
+  
+  .privacy-policy-title {
+    @apply text-3xl font-bold mb-4 text-gray-900;
+  }
+  
+  .privacy-policy-last-update {
+    @apply text-sm text-gray-500 mb-6;
+  }
+  
+  .privacy-policy-highlight {
+    @apply font-bold;
+  }
+  
+  .privacy-policy-section-title {
+    @apply text-xl font-medium mt-8 mb-4 text-gray-900;
+  }
+  
+  .privacy-policy-subsection-title {
+    @apply text-lg font-medium mt-4 mb-2 text-gray-900;
+  }
+  
+  .privacy-policy-list {
+    @apply list-decimal pl-6;
+  }
+  
+  .privacy-policy-link {
+    @apply text-blue-500 hover:underline; 
+  }
+  
+  .privacy-table-img {
+    @apply w-full; 
+  }

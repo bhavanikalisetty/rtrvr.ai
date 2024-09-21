@@ -5,13 +5,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
         url: 'https://www.rtrvr.ai',
         lastModified: new Date(),
-        changeFrequency: 'yearly',
+        changeFrequency: 'weekly',
         priority: 1
     },
     {
         url: 'https://www.rtrvr.ai/build-datasets',
         lastModified: new Date(),
-        changeFrequency: 'monthly',
+        changeFrequency: 'weekly',
         priority: 0.8
     },
     {
@@ -25,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.5
+    },
+    {
+      url: 'https://www.rtrvr.ai/privacy-policy',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.4
     }
   ]
 }

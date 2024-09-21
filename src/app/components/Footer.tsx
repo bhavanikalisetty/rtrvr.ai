@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
           <a href="/" className="hover:text-white">
             Terms
           </a>
-          <a href="/" className="hover:text-white">
+          <a href="/privacy-policy" className="hover:text-white">
             Privacy
           </a>
         </div>
