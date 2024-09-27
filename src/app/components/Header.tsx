@@ -37,11 +37,8 @@ export default function Header({ className }: { className?: string }) {
         <Link href="/team" className="hover:text-white text-lg">
           Team
         </Link>
-        <Link href="/build-datasets" className="hover:text-white text-lg">
-          Build Datasets
-        </Link>
         <Link href="/explore-data-marketplace" className="hover:text-white text-lg">
-          Explore Data Marketplace
+          Reach Out
         </Link>
       </nav>
       {isMenuOpen && (
@@ -49,11 +46,8 @@ export default function Header({ className }: { className?: string }) {
           <Link href="/team" className="hover:text-white text-lg block">
             Team
           </Link>
-          <Link href="/build-datasets" className="hover:text-white text-lg block">
-            Build Datasets
-          </Link>
           <Link href="/explore-data-marketplace" className="hover:text-white text-lg block">
-            Explore Data Marketplace
+            Reach Out
           </Link>
         </nav>
       )}

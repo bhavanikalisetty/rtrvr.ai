@@ -9,12 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 1
     },
     {
-        url: 'https://www.rtrvr.ai/build-datasets',
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.8
-    },
-    {
         url: 'https://www.rtrvr.ai/explore-data-marketplace',
         lastModified: new Date(),
         changeFrequency: 'weekly',
