@@ -38,7 +38,7 @@ export default function Header({ className }: { className?: string }) {
           Team
         </Link>
         <Link href="/explore-data-marketplace" className="hover:text-white text-lg">
-          Reach Out
+          Contact
         </Link>
       </nav>
       {isMenuOpen && (
@@ -47,7 +47,7 @@ export default function Header({ className }: { className?: string }) {
             Team
           </Link>
           <Link href="/explore-data-marketplace" className="hover:text-white text-lg block">
-            Reach Out
+            Contact
           </Link>
         </nav>
       )}
