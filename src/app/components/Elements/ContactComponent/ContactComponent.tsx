@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './DataMarketPlaceComponent.css';
+import './ContactComponent.css';
 import { kv } from "@vercel/kv";
 
-const DataMarketPlaceComponent = () => {
+const ContactComponent = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -99,4 +99,4 @@ const DataMarketPlaceComponent = () => {
   );
 };
 
-export default DataMarketPlaceComponent;
+export default ContactComponent;

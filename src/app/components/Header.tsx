@@ -37,7 +37,7 @@ export default function Header({ className }: { className?: string }) {
         <Link href="/team" className="hover:text-white text-lg">
           Team
         </Link>
-        <Link href="/explore-data-marketplace" className="hover:text-white text-lg">
+        <Link href="/contact" className="hover:text-white text-lg">
           Contact
         </Link>
       </nav>
@@ -46,7 +46,7 @@ export default function Header({ className }: { className?: string }) {
           <Link href="/team" className="hover:text-white text-lg block">
             Team
           </Link>
-          <Link href="/explore-data-marketplace" className="hover:text-white text-lg block">
+          <Link href="/contact" className="hover:text-white text-lg block">
             Contact
           </Link>
         </nav>
